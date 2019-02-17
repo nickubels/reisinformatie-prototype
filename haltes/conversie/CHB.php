@@ -1,5 +1,5 @@
 <?php
-set_time_limit(300);
+set_time_limit(3000);
 ini_set("memory_limit","2048M");
 error_reporting(E_ALL ^E_NOTICE ^E_WARNING);
 

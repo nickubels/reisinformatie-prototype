@@ -1,6 +1,9 @@
 body {
     padding-top: 5rem;
 }
+.row {
+    height: 100%;
+}
 #map {
     min-height: 500px;
     min-width: 500px;
