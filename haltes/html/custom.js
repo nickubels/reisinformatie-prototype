@@ -10,7 +10,7 @@ function initmap(){
 }
 
 var geojsonMarkerOptions = {
-    radius: 8,
+    radius: 4,
     fillColor: "#ff7800",
     color: "#000",
     weight: 1,
@@ -20,12 +20,16 @@ var geojsonMarkerOptions = {
 
 function onEachFeature(feature, layer) {
     layer.bindTooltip(feature.properties.quayname);
+    layer.on('click', function (e) {
+      console.log(e); 
+    });
 }
 
 function loadMunicipality(code){
     jQuery.getJSON("../data/amsterdam.json", function(data) {
         console.log(data);
         L.geoJson(data, { pointToLayer: function (feature, latlng) {
+            geojsonMarkerOptions.fillColor = feature.properties['marker-color']
             return L.circleMarker(latlng, geojsonMarkerOptions);
         }, onEachFeature: onEachFeature}).addTo(map);
     });
