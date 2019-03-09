@@ -95,10 +95,18 @@ function fillTemplate(properties){
             <div id="general" class="collapse show" aria-labelledby="headingOne" data-parent="#chbData">
                 <div class="card-body">
                     <dl class="row">
-                        <dt class="col-sm-3">Type</dt>
-                        <dd class="col-sm-9">${getStopPlaceType(properties.stopplacetype)}</dd>
-                        <dt class="col-sm-3">Status</dt>
-                        <dd class="col-sm-9">${getQuayStatus(properties.quaystatus)}</dd>
+                        <dt class="col-sm-6">Naam</dt>
+                        <dd class="col-sm-6">${properties.quayname}</dd>
+                        <dt class="col-sm-6">Publieke naam</dt>
+                        <dd class="col-sm-6">${properties.publicname}</dd>
+                        <dt class="col-sm-6">Plaats</dt>
+                        <dd class="col-sm-6">${properties.town}</dd>
+                        <dt class="col-sm-6">Type</dt>
+                        <dd class="col-sm-6">${getStopPlaceType(properties.stopplacetype)}</dd>
+                        <dt class="col-sm-6">Haltetype</dt>
+                        <dd class="col-sm-6">${properties.quaytype}</dd>
+                        <dt class="col-sm-6">Status</dt>
+                        <dd class="col-sm-6">${getQuayStatus(properties.quaystatus)}</dd>
                     </dl>
               </div>
             </div>
@@ -106,16 +114,81 @@ function fillTemplate(properties){
           <div class="card">
             <div class="card-header" id="headingTwo">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Collapsible Group Item #2
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#geometry" aria-expanded="false" aria-controls="geometry">
+                  Geometrie en locatie
                 </button>
               </h2>
             </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div id="geometry" class="collapse" aria-labelledby="headingTwo" data-parent="#chbData">
               <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                
               </div>
             </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#accessability" aria-expanded="false" aria-controls="accessability">
+                  Toegankelijkheid
+                </button>
+              </h2>
+            </div>
+            <div id="accessability" class="collapse" aria-labelledby="headingThree" data-parent="#chbData">
+              <div class="card-body">
+                
+              </div>
+            </div> 
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#facility" aria-expanded="false" aria-controls="facility">
+                  Faciliteiten
+                </button>
+              </h2>
+            </div>
+            <div id="facility" class="collapse" aria-labelledby="headingFour" data-parent="#chbData">
+              <div class="card-body">
+                <dl class="row">
+                        <dt class="col-sm-6">Fietsenstalling</dt>
+                        <dd class="col-sm-6">${properties.bicycleparking ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Fietsplekken</dt>
+                        <dd class="col-sm-6">${properties.numberofbicycleplaces}</dd>
+                        <dt class="col-sm-6">Prullenbak</dt>
+                        <dd class="col-sm-6">${properties.bins ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Verlichting</dt>
+                        <dd class="col-sm-6">${properties.illuminatedstop ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Informatiepaneel</dt>
+                        <dd class="col-sm-6">${properties.bicycleparking ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Stasteun</dt>
+                        <dd class="col-sm-6">${properties.leantosupport ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">OVC opladen</dt>
+                        <dd class="col-sm-6">${properties.ovcharging ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">OVC CiCo</dt>
+                        <dd class="col-sm-6">${properties.ovcico ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">DRIS</dt>
+                        <dd class="col-sm-6">${properties.passengerinformationdisplay ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Aantal regels op DRIS</dt>
+                        <dd class="col-sm-6">${properties.passengerinformationdisplaytype}</dd>
+                        <dt class="col-sm-6">Audio DRIS</dt>
+                        <dd class="col-sm-6">${properties.audiobutton ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Lijnnetkaart</dt>
+                        <dd class="col-sm-6">${properties.routenetworkmap ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Haltevertrekstaat</dt>
+                        <dd class="col-sm-6">${properties.timetableinformation ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Zitgelegenheid</dt>
+                        <dd class="col-sm-6">${properties.seatavailable ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Abri</dt>
+                        <dd class="col-sm-6">${properties.shelter ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Reclame in abri</dt>
+                        <dd class="col-sm-6">${properties.shelterpublicity ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Haltebord</dt>
+                        <dd class="col-sm-6">${properties.stopsign ? "Aanwezig" : "Niet aanwezig"}</dd>
+                        <dt class="col-sm-6">Type haltebord</dt>
+                        <dd class="col-sm-6">${properties.stopsigntype}</dd>
+                </dl>
+              </div>
+            </div> 
           </div>
         </div>
     `;
